@@ -1628,7 +1628,7 @@ pre .javascript .function {
   transform: translateX(0);
 }
 #logo {
-  background: url("images/logo.jpg") center;
+  background: url("images/logo.png") center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
