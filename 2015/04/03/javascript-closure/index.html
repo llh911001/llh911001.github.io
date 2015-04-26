@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>谈谈 JavaScript 闭包 | Hackll.com</title>
+  <title>理解 JavaScript 闭包 | Hackll.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在 JavaScript 中，原型（prototype）和闭包(closure) 可以说是这门语言的精髓，也是不太容易理解和掌握的地方。比如 Eric Elliott 就认为这两个概念是 JavaScript 的 两大支柱。前者是 JavaScript 的 OOP 实现，后者是函数式编程的关键所在。本文尝试探讨一下闭包的形成原理以及它的作用。
 First-class function和所有的函数式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="谈谈 JavaScript 闭包">
+<meta property="og:title" content="理解 JavaScript 闭包">
 <meta property="og:url" content="http://hackll.com/2015/04/03/javascript-closure/index.html">
 <meta property="og:site_name" content="Hackll.com">
 <meta property="og:description" content="在 JavaScript 中，原型（prototype）和闭包(closure) 可以说是这门语言的精髓，也是不太容易理解和掌握的地方。比如 Eric Elliott 就认为这两个概念是 JavaScript 的 两大支柱。前者是 JavaScript 的 OOP 实现，后者是函数式编程的关键所在。本文尝试探讨一下闭包的形成原理以及它的作用。
 First-class function和所有的函数式">
-<meta property="og:image" content="http://i1381.photobucket.com/albums/ah215/lilh42/AB13AD98-6928-4FB4-B04A-3347C66C1120.png_zpsz6ylzicl.jpeg">
+<meta property="og:image" content="http://7xir1p.com1.z0.glb.clouddn.com/AB13AD98-6928-4FB4-B04A-3347C66C1120.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="谈谈 JavaScript 闭包">
+<meta name="twitter:title" content="理解 JavaScript 闭包">
 <meta name="twitter:description" content="在 JavaScript 中，原型（prototype）和闭包(closure) 可以说是这门语言的精髓，也是不太容易理解和掌握的地方。比如 Eric Elliott 就认为这两个概念是 JavaScript 的 两大支柱。前者是 JavaScript 的 OOP 实现，后者是函数式编程的关键所在。本文尝试探讨一下闭包的形成原理以及它的作用。
 First-class function和所有的函数式">
 <meta name="twitter:creator" content="@lilh42">
@@ -108,7 +108,7 @@ html {background-color: white}</style>
         
   
     <h1 class="article-title" itemprop="name">
-      谈谈 JavaScript 闭包
+      理解 JavaScript 闭包
     </h1>
   
 
@@ -152,7 +152,7 @@ html {background-color: white}</style>
 <p>结果还是一样。这是第二个问题：为什么外部函数执行完毕后，返回的内部函数还能访问变量 <code>a</code>？</p>
 <p>凭直觉来看，好像是返回并赋值给 <code>bar</code> 的 <code>inner</code> 函数在 <code>foo</code> 执行完毕之后，还保留着对变量 <code>a</code> 引用？某种程度上，可以这么理解。</p>
 <p>当然真正的原因是<strong>词法作用域</strong>（Lexical scoping）。所谓词法作用域，就是内部作用域（内部函数）可以访问它的“父作用域”（即定义它的函数所在的作用域），依次类推，一直到全局作用域。这样就形成了一条作用域链（Scope chain）。如下图所示：</p>
-<p><img src="http://i1381.photobucket.com/albums/ah215/lilh42/AB13AD98-6928-4FB4-B04A-3347C66C1120.png_zpsz6ylzicl.jpeg" alt="VariableEnvironment"></p>
+<p><img src="http://7xir1p.com1.z0.glb.clouddn.com/AB13AD98-6928-4FB4-B04A-3347C66C1120.png" alt="VariableEnvironment"></p>
 <p>图中红线所勾勒的是作用域，红圈内表示的是 <em>VariableEnvironment</em> ，即该作用域内的变量（在该作用域内定义的变量）的集合。蓝色箭头则形成了一个作用域链。</p>
 <p>但是这还不足以解释，为什么在函数 <code>f</code> 中可以访问变量 <code>x</code>，在函数 <code>g</code> 中可以访问变量 <code>y</code> 和 <code>x</code>。这是因为函数的一个不可见属性：[[Scope]]。</p>
 <h2 id="[[Scope]]_Property">[[Scope]] Property</h2><p>每一个 js 函数在<strong>创建</strong>的时候，都有一个不可见的内部属性：[[Scope]]。可以把 [[Scope]] 属性理解为一个<strong>有序列表</strong>，这个列表的元素是函数所有的父作用域内的 VariableEnvironment，而且元素的 index 越低，则与函数的“距离”越近。也就是说，这个列表的第一个元素永远是函数的直接父级作用域的 VariableEnvironment。</p>
@@ -179,11 +179,12 @@ html {background-color: white}</style>
 <li>返回包含有这个内部函数的对象；</li>
 <li>…</li>
 </ul>
+<h2 id="Reference">Reference</h2><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures</a><br><a href="http://jibbering.com/faq/notes/closures/#clClose" target="_blank" rel="external">http://jibbering.com/faq/notes/closures/#clClose</a><br><a href="http://pierrespring.com/2010/05/11/function-scope-and-lexical-scoping/" target="_blank" rel="external">http://pierrespring.com/2010/05/11/function-scope-and-lexical-scoping/</a><br><a href="https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/" target="_blank" rel="external">https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/</a><br><a href="http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/" target="_blank" rel="external">http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/04/03/javascript-closure/" data-id="ci8kb6ksw0003hlspajcy1rvz" class="article-share-link">Share</a>
+      <a data-url="http://hackll.com/2015/04/03/javascript-closure/" data-id="ci8v80tz500036hsp3cl14p5x" class="article-share-link">Share</a>
       
         <a href="http://hackll.com/2015/04/03/javascript-closure/#disqus_thread" class="article-comment-link">Comments</a>
       
