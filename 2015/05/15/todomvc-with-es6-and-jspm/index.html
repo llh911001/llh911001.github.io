@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hackll.com</title>
+  <title>Todomvc with ES6 and jspm | Hackll.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hackll.com">
-<meta property="og:url" content="http://hackll.com/index.html">
+  <meta name="description" content="What is jspmjspm 是一个包管理器，使用 SystemJS 这个模块加载器进行模块的管理。SystemJS 是一个所谓 universal module loader，基于 ES6 module loader，除了能加载 ES6 模块，还支持 CommonJS，AMD 及 globals 语法。
+How jspm load modulesjspm 通过 registry 加载模块，它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Todomvc with ES6 and jspm">
+<meta property="og:url" content="http://hackll.com/2015/05/15/todomvc-with-es6-and-jspm/index.html">
 <meta property="og:site_name" content="Hackll.com">
-<meta property="og:description">
+<meta property="og:description" content="What is jspmjspm 是一个包管理器，使用 SystemJS 这个模块加载器进行模块的管理。SystemJS 是一个所谓 universal module loader，基于 ES6 module loader，除了能加载 ES6 模块，还支持 CommonJS，AMD 及 globals 语法。
+How jspm load modulesjspm 通过 registry 加载模块，它">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hackll.com">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Todomvc with ES6 and jspm">
+<meta name="twitter:description" content="What is jspmjspm 是一个包管理器，使用 SystemJS 这个模块加载器进行模块的管理。SystemJS 是一个所谓 universal module loader，基于 ES6 module loader，除了能加载 ES6 模块，还支持 CommonJS，AMD 及 globals 语法。
+How jspm load modulesjspm 通过 registry 加载模块，它">
 <meta name="twitter:creator" content="@lilh42">
 <link rel="publisher" href="u/0/108755916357635545032">
   
@@ -96,24 +99,22 @@ html {background-color: white}</style>
 </aside>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-todomvc-with-es6-and-jspm" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-todomvc-with-es6-and-jspm" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/15/todomvc-with-es6-and-jspm/">Todomvc with ES6 and jspm</a>
+    <h1 class="article-title" itemprop="name">
+      Todomvc with ES6 and jspm
     </h1>
   
 
 
         <div class="article-meta">
           
-  <time datetime="2015-05-14T16:00:00.000Z" itemprop="datePublished">05/15/2015</time>
+  <time class="centered" datetime="2015-05-14T16:00:00.000Z" itemprop="datePublished">05/15/2015</time>
 
 
           
@@ -181,176 +182,27 @@ html {background-color: white}</style>
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/04/25/introduce-http2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Next</strong>
+      <div class="article-nav-title">HTTP/2 简介</div>
+    </a>
+  
+</nav>
+
+
+  
 </article>
 
 
-
-  
-    <article id="post-introduce-http2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/25/introduce-http2/">HTTP/2 简介</a>
-    </h1>
-  
-
-
-        <div class="article-meta">
-          
-  <time datetime="2015-04-24T16:00:00.000Z" itemprop="datePublished">04/25/2015</time>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-_HTTP_现状">1. HTTP 现状</h2><p>HTTP 是现在互联网上使用最广泛的网络协议，它的当前版本是 HTTP/1.1，也是使用范围最广的版本（实际上还有不少的<a href="http://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE#HTTP.2F1.0">代理服务器</a>在使用 HTTP/1.0）。HTTP 的标准由 <a href="http://en.wikipedia.org/wiki/Internet_Engineering_Task_Force">IETF</a> 和 <a href="http://en.wikipedia.org/wiki/World_Wide_Web_Consortium">W3C</a> 共同负责制定，HTTP/1.1 的最初版本于 1997 年 7 月发布，即 <a href="http://tools.ietf.org/html/rfc2068">RFC 2068</a>。随后在 1999 年 6 月，他们又发布了 <a href="http://tools.ietf.org/html/rfc2616">RFC 2616</a>，主要针对 <a href="http://tools.ietf.org/html/rfc2068">RFC 2068</a> 进行一些修订和改善。2014 年 7 月，<a href="http://tools.ietf.org/html/rfc2616">RFC 2616</a> 更新为 <a href="https://tools.ietf.org/html/rfc7230">RFC 7230</a> 等六个 <a href="http://en.wikipedia.org/wiki/Request_for_Comments">RFC</a> 标准。</p>
-<h3 id="1-1_传输量和请求数">1.1 传输量和请求数</h3><p>随着前端技术的发展，包括 JavaScript 层出不穷的框架和类库，以及越来越成熟的构建工具和模块化开发等等，导致网页上需要展现的内容及加载一个页面所需的请求数越来越多，而这一趋势，短期来看，并无扭转的可能。</p>
-<p>下图展示了从 2011 年 4 月到 2015 年 4 月网页的平均传输量和请求数，可以看到，现在用户打开一个网页需要下载的资源已经达到将近 2MB，请求数也接近 100。（数据来源：<a href="http://httparchive.org">httparchive.org</a>）</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/04/25/introduce-http2/#more">Read more</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/04/25/introduce-http2/" data-id="ci8y9lnxd0000liqf79ey08sc" class="article-share-link">Share</a>
-      
-        <a href="http://hackll.com/2015/04/25/introduce-http2/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP2/">HTTP2</a></li></ul>
-
-
-    </footer>
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-  
-</article>
-
-
-
-  
-    <article id="post-20-vim-tips" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/12/20-vim-tips/">20 个 Vim 实用技巧</a>
-    </h1>
-  
-
-
-        <div class="article-meta">
-          
-  <time datetime="2015-04-11T16:00:00.000Z" itemprop="datePublished">04/12/2015</time>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我是 Vim 的忠实用户，从开始编程起，就使用 Vim 作为编辑器。在我看来，Vim 的强大之处有三：</p>
-<ol>
-<li>快速定位；</li>
-<li>宏；</li>
-<li>不计其数的插件。</li>
-</ol>
-<p>在使用 Vim 的过程中，我从社区学习到很多有用的技巧，自己也总结和掌握了一些。正是这些技巧让我得以在个人的编程经验中，还算得心应手地使用 Vim。本文是我对自己平常使用的一些用法技巧的分享，这些技巧不借助任何插件，全部是 Vim 本身提供的功能。（当然这绝不是在否定插件的作用，只是说，编辑器本身可以提供或者达到的效果，则尽管用，keep it simple。）<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/04/12/20-vim-tips/#more">Read more</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/04/12/20-vim-tips/" data-id="ci8v80tye00006hsph3vph0w0" class="article-share-link">Share</a>
-      
-        <a href="http://hackll.com/2015/04/12/20-vim-tips/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-javascript-closure" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/03/javascript-closure/">理解 JavaScript 闭包</a>
-    </h1>
-  
-
-
-        <div class="article-meta">
-          
-  <time datetime="2015-04-02T16:00:00.000Z" itemprop="datePublished">04/03/2015</time>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在 JavaScript 中，原型（prototype）和闭包(closure) 可以说是这门语言的精髓，也是不太容易理解和掌握的地方。比如 <a href="http://ericelliottjs.com/">Eric Elliott</a> 就认为这两个概念是 JavaScript 的 <a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3">两大支柱</a>。前者是 JavaScript 的 OOP 实现，后者是函数式编程的关键所在。本文尝试探讨一下闭包的形成原理以及它的作用。</p>
-<h2 id="First-class_function">First-class function</h2><p>和所有的函数式编程语言一样，JavaScript 的函数也是 First-class function，这意味着函数可以：</p>
-<ul>
-<li>赋值给一个变量；</li>
-<li>作为参数传递给其他函数；</li>
-<li>作为返回值从其他函数中返回；</li>
-<li>…</li>
-</ul>
-<p>就像其他所有的对象（object）一样。这是闭包得以存在的最基本的条件，因为本质上来讲，闭包就是函数，一种特殊的函数。<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/04/03/javascript-closure/#more">Read more</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/04/03/javascript-closure/" data-id="ci8v80tz500036hsp3cl14p5x" class="article-share-link">Share</a>
-      
-        <a href="http://hackll.com/2015/04/03/javascript-closure/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/closure/">closure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-  
-
+</section>
 
 </section>
       </div>
@@ -369,11 +221,13 @@ html {background-color: white}</style>
 <script>
   var disqus_shortname = 'linghaosblog';
   
+  //var disqus_url = 'http://hackll.com/2015/05/15/todomvc-with-es6-and-jspm/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//go.disqus.com/count.js';
+    dsq.src = '//go.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
