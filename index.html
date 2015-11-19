@@ -46,7 +46,7 @@ html {background-color: white}</style>
       <a id="nav-search-btn" class="nav-icon" title="Search"></a>
     </nav>
     <div id="search-form-wrap">
-      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://hackll.com"></form>
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hackll.com"></form>
     </div>
   </div>
 </header>
@@ -98,6 +98,57 @@ html {background-color: white}</style>
       <div class="outer">
         <section id="main">
   
+    <article id="post-debounce-and-throttle" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/19/debounce-and-throttle/">Debounce 和 Throttle 的原理及实现</a>
+    </h1>
+  
+
+
+        <div class="article-meta">
+          
+  <time datetime="2015-11-18T16:00:00.000Z" itemprop="datePublished">11/19/2015</time>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在处理诸如 <code>resize</code>、<code>scroll</code>、<code>mousemove</code> 和 <code>keydown/keyup/keypress</code> 等事件的时候，通常我们不希望这些事件太过频繁地触发，尤其是监听程序中涉及到大量的计算或者有非常耗费资源的操作。</p>
+<p>有多频繁呢？以 <code>mousemove</code> 为例，根据 <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-mousemove">DOM Level 3</a> 的规定，「如果鼠标连续移动，那么浏览器就<strong>应该</strong>触发多个连续的 <code>mousemove</code> 事件」，这意味着浏览器会在其内部计时器允许的情况下，根据用户移动鼠标的速度来触发 <code>mousemove</code> 事件。（当然了，如果移动鼠标的速度足够快，比如“刷”一下扫过去，浏览器是不会触发这个事件的）。<code>resize</code>、<code>scroll</code> 和 <code>key*</code> 等事件与此类似。</p>
+<p>可以参看这个 <a href="http://codepen.io/llh911001/pen/XmGMxg?editors=101">Demo</a> 体会下。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/11/19/debounce-and-throttle/#more">Read more</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hackll.com/2015/11/19/debounce-and-throttle/" data-id="cih6d4io80000jxxay0grqipj" class="article-share-link">Share</a>
+      
+        <a href="http://hackll.com/2015/11/19/debounce-and-throttle/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debounce/">debounce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/throttle/">throttle</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-decorators-in-es7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -135,7 +186,7 @@ html {background-color: white}</style>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/07/24/decorators-in-es7/" data-id="cich1jy6j0000y1spo06ke3v6" class="article-share-link">Share</a>
+      <a data-url="http://hackll.com/2015/07/24/decorators-in-es7/" data-id="cih6cpje3000o1exaeoeecxlf" class="article-share-link">Share</a>
       
         <a href="http://hackll.com/2015/07/24/decorators-in-es7/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -188,7 +239,7 @@ html {background-color: white}</style>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/06/02/read-on-liberty/" data-id="ciae89i6400006hspytsrzjr3" class="article-share-link">Share</a>
+      <a data-url="http://hackll.com/2015/06/02/read-on-liberty/" data-id="cih6cpj4g000b1exapn5hpn2z" class="article-share-link">Share</a>
       
         <a href="http://hackll.com/2015/06/02/read-on-liberty/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -238,7 +289,7 @@ html {background-color: white}</style>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/05/15/todomvc-with-es6-and-jspm/" data-id="ci9paa0xt0000yuspggi0yurv" class="article-share-link">Share</a>
+      <a data-url="http://hackll.com/2015/05/15/todomvc-with-es6-and-jspm/" data-id="cih6cpj3e00031exa0nhvwpxn" class="article-share-link">Share</a>
       
         <a href="http://hackll.com/2015/05/15/todomvc-with-es6-and-jspm/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -292,67 +343,12 @@ html {background-color: white}</style>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/04/25/introduce-http2/" data-id="ci8y9lnxd0000liqf79ey08sc" class="article-share-link">Share</a>
+      <a data-url="http://hackll.com/2015/04/25/introduce-http2/" data-id="cih6cpj4t000l1exao7410wy9" class="article-share-link">Share</a>
       
         <a href="http://hackll.com/2015/04/25/introduce-http2/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP2/">HTTP2</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-20-vim-tips" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/12/20-vim-tips/">20 个 Vim 实用技巧</a>
-    </h1>
-  
-
-
-        <div class="article-meta">
-          
-  <time datetime="2015-04-11T16:00:00.000Z" itemprop="datePublished">04/12/2015</time>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我是 Vim 的忠实用户，从开始编程起，就使用 Vim 作为编辑器。在我看来，Vim 的强大之处有三：</p>
-<ol>
-<li>快速定位；</li>
-<li>宏；</li>
-<li>不计其数的插件。</li>
-</ol>
-<p>在使用 Vim 的过程中，我从社区学习到很多有用的技巧，自己也总结和掌握了一些。正是这些技巧让我得以在个人的编程经验中，还算得心应手地使用 Vim。本文是我对自己平常使用的一些用法技巧的分享，这些技巧不借助任何插件，全部是 Vim 本身提供的功能。（当然这绝不是在否定插件的作用，只是说，编辑器本身可以提供或者达到的效果，则尽管用，keep it simple。）<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/04/12/20-vim-tips/#more">Read more</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/04/12/20-vim-tips/" data-id="ci8v80tye00006hsph3vph0w0" class="article-share-link">Share</a>
-      
-        <a href="http://hackll.com/2015/04/12/20-vim-tips/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
 
 
     </footer>
