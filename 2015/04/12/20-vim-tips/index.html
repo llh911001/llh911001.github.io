@@ -5,34 +5,17 @@
   
   <title>20 个 Vim 实用技巧 | Hackll.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我是 Vim 的忠实用户，从开始编程起，就使用 Vim 作为编辑器。在我看来，Vim 的强大之处有三：
-
-快速定位；
-宏；
-不计其数的插件。
-
-在使用 Vim 的过程中，我从社区学习到很多有用的技巧，自己也总结和掌握了一些。正是这些技巧让我得以在个人的编程经验中，还算得心应手地使用 Vim。本文是我对自己平常使用的一些用法技巧的分享，这些技巧不借助任何插件，全部是 Vim 本身提供的功能。（当然这">
+  <meta name="description" content="我是 Vim 的忠实用户，从开始编程起，就使用 Vim 作为编辑器。在我看来，Vim 的强大之处有三：  快速定位； 宏； 不计其数的插件。  在使用 Vim 的过程中，我从社区学习到很多有用的技巧，自己也总结和掌握了一些。正是这些技巧让我得以在个人的编程经验中，还算得心应手地使用 Vim。本文是我对自己平常使用的一些用法技巧的分享，这些技巧不借助任何插件，全部是 Vim 本身提供的功能。（当然这">
+<meta name="keywords" content="vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20 个 Vim 实用技巧">
 <meta property="og:url" content="http://hackll.com/2015/04/12/20-vim-tips/index.html">
 <meta property="og:site_name" content="Hackll.com">
-<meta property="og:description" content="我是 Vim 的忠实用户，从开始编程起，就使用 Vim 作为编辑器。在我看来，Vim 的强大之处有三：
-
-快速定位；
-宏；
-不计其数的插件。
-
-在使用 Vim 的过程中，我从社区学习到很多有用的技巧，自己也总结和掌握了一些。正是这些技巧让我得以在个人的编程经验中，还算得心应手地使用 Vim。本文是我对自己平常使用的一些用法技巧的分享，这些技巧不借助任何插件，全部是 Vim 本身提供的功能。（当然这">
+<meta property="og:description" content="我是 Vim 的忠实用户，从开始编程起，就使用 Vim 作为编辑器。在我看来，Vim 的强大之处有三：  快速定位； 宏； 不计其数的插件。  在使用 Vim 的过程中，我从社区学习到很多有用的技巧，自己也总结和掌握了一些。正是这些技巧让我得以在个人的编程经验中，还算得心应手地使用 Vim。本文是我对自己平常使用的一些用法技巧的分享，这些技巧不借助任何插件，全部是 Vim 本身提供的功能。（当然这">
 <meta property="og:updated_time" content="2015-08-18T15:47:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20 个 Vim 实用技巧">
-<meta name="twitter:description" content="我是 Vim 的忠实用户，从开始编程起，就使用 Vim 作为编辑器。在我看来，Vim 的强大之处有三：
-
-快速定位；
-宏；
-不计其数的插件。
-
-在使用 Vim 的过程中，我从社区学习到很多有用的技巧，自己也总结和掌握了一些。正是这些技巧让我得以在个人的编程经验中，还算得心应手地使用 Vim。本文是我对自己平常使用的一些用法技巧的分享，这些技巧不借助任何插件，全部是 Vim 本身提供的功能。（当然这">
+<meta name="twitter:description" content="我是 Vim 的忠实用户，从开始编程起，就使用 Vim 作为编辑器。在我看来，Vim 的强大之处有三：  快速定位； 宏； 不计其数的插件。  在使用 Vim 的过程中，我从社区学习到很多有用的技巧，自己也总结和掌握了一些。正是这些技巧让我得以在个人的编程经验中，还算得心应手地使用 Vim。本文是我对自己平常使用的一些用法技巧的分享，这些技巧不借助任何插件，全部是 Vim 本身提供的功能。（当然这">
 <meta name="twitter:creator" content="@lilh42">
 <link rel="publisher" href="u/0/108755916357635545032">
   
@@ -40,7 +23,7 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
   <style type="text/css">
 html {background-color: white}</style>
@@ -65,7 +48,7 @@ html {background-color: white}</style>
       <a id="nav-search-btn" class="nav-icon" title="Search"></a>
     </nav>
     <div id="search-form-wrap">
-      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hackll.com"></form>
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hackll.com"></form>
     </div>
   </div>
 </header>
@@ -146,108 +129,108 @@ html {background-color: white}</style>
 <li>不计其数的插件。</li>
 </ol>
 <p>在使用 Vim 的过程中，我从社区学习到很多有用的技巧，自己也总结和掌握了一些。正是这些技巧让我得以在个人的编程经验中，还算得心应手地使用 Vim。本文是我对自己平常使用的一些用法技巧的分享，这些技巧不借助任何插件，全部是 Vim 本身提供的功能。（当然这绝不是在否定插件的作用，只是说，编辑器本身可以提供或者达到的效果，则尽管用，keep it simple。）<br><a id="more"></a></p>
-<h4 id="1-_快速_esc">1. 快速 esc</h4><ul>
+<h4 id="1-快速-esc"><a href="#1-快速-esc" class="headerlink" title="1. 快速 esc"></a>1. 快速 esc</h4><ul>
 <li>模式：insert</li>
 <li>按键：<code>&lt;C-[&gt;</code></li>
 <li>说明：返回到 normal 模式，等于按下 esc。</li>
 </ul>
-<h4 id="2-_翻页">2. 翻页</h4><ul>
+<h4 id="2-翻页"><a href="#2-翻页" class="headerlink" title="2. 翻页"></a>2. 翻页</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>&lt;C-f&gt;</code> / <code>&lt;C-u&gt;</code></li>
 <li>说明：向下/向上翻页。</li>
 </ul>
-<h4 id="3-_交换字符">3. 交换字符</h4><ul>
+<h4 id="3-交换字符"><a href="#3-交换字符" class="headerlink" title="3. 交换字符"></a>3. 交换字符</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>xp</code></li>
 <li>说明：交换两个字符位置。</li>
 <li>引申：<code>ddp</code> 交换两行位置。</li>
 </ul>
-<h4 id="4-_搜索_word">4. 搜索 word</h4><ul>
+<h4 id="4-搜索-word"><a href="#4-搜索-word" class="headerlink" title="4. 搜索 word"></a>4. 搜索 word</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>*</code></li>
 <li>说明：光标在一个 word 中间时，按下星号 <code>*</code> 能向下搜索这个 word；之后再按 <code>n</code> 跳到下一个，<code>N</code> 跳到上一个匹配位置。</li>
 <li>引申：井号 <code>#</code> 向上搜索这个 word。</li>
 </ul>
-<h4 id="5-_替换_word">5. 替换 word</h4><ul>
+<h4 id="5-替换-word"><a href="#5-替换-word" class="headerlink" title="5. 替换 word"></a>5. 替换 word</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>cw</code></li>
 <li>说明：替换当前 word，即删除当前 word 并进入 insert 模式。实际上，上述说法只适用于这种情况：光标处于 word 的开始字符处。如果光标处于 word 中间，那么该命令将删除光标至 word 结束字符处之间的字符，并进入 insert 模式。</li>
 </ul>
-<h4 id="6-_重复操作">6. 重复操作</h4><ul>
+<h4 id="6-重复操作"><a href="#6-重复操作" class="headerlink" title="6. 重复操作"></a>6. 重复操作</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>.</code></li>
 <li>说明：重复上一个操作。比如，技巧 4 中使用 <code>*</code> 或 <code>#</code> 搜索到的 word ，如果想替换这些 word ，那么可以使用 <code>cw</code> 替换掉，之后再按 <code>n</code>/<code>N</code> 跳到下一个希望替换的 word 那里，接着按 <code>.</code> 就会重复之前的替换了。</li>
 </ul>
-<h4 id="7-_全局替换">7. 全局替换</h4><ul>
+<h4 id="7-全局替换"><a href="#7-全局替换" class="headerlink" title="7. 全局替换"></a>7. 全局替换</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>:g/pat1/s//pat2/g</code> / <code>:%s/pat1/pat2/g</code></li>
 <li>说明：全局替换，将整个文档中的 <code>pat1</code> 全部替换为 <code>pat2</code>。</li>
 </ul>
-<h4 id="8-_局部替换">8. 局部替换</h4><ul>
+<h4 id="8-局部替换"><a href="#8-局部替换" class="headerlink" title="8. 局部替换"></a>8. 局部替换</h4><ul>
 <li>模式：visual</li>
 <li>按键：<code>:s/pat1/pat2/g</code></li>
 <li>说明：将<strong>选中区域内</strong>的 <code>pat1</code> 全部替换为 <code>pat2</code>。</li>
 </ul>
-<h4 id="9-_替换行">9. 替换行</h4><ul>
+<h4 id="9-替换行"><a href="#9-替换行" class="headerlink" title="9. 替换行"></a>9. 替换行</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>cc</code> / <code>S</code></li>
 <li>说明： 替换整行，也就是删除当前<strong>整行</strong>并进入 insert 模式。</li>
 </ul>
-<h4 id="10-_改变大小写">10. 改变大小写</h4><ul>
+<h4 id="10-改变大小写"><a href="#10-改变大小写" class="headerlink" title="10. 改变大小写"></a>10. 改变大小写</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>~</code></li>
 <li>说明：改变<strong>当前字符</strong>的大小写。在 visual 模式下，改变所选字符的大小写。</li>
 <li>引申：<code>u</code> 和 <code>U</code> 分别将<strong>选中字符</strong>变为小写和大写。</li>
 </ul>
-<h4 id="11-_跳到上一位置">11. 跳到上一位置</h4><ul>
+<h4 id="11-跳到上一位置"><a href="#11-跳到上一位置" class="headerlink" title="11. 跳到上一位置"></a>11. 跳到上一位置</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>`&#39;</code></li>
 <li>说明： 跳到上一个位置，会更新 jump 的历史，也就是说，多次使用该命令会在两个位置之间跳来跳去。</li>
 <li>引申：<code>&lt;C-o&gt;</code> 也可以跳到上一个位置，不过它不会更新 jump 历史，会一直跳到文件关闭为止。</li>
 </ul>
-<h4 id="12-_标记位置">12. 标记位置</h4><ul>
+<h4 id="12-标记位置"><a href="#12-标记位置" class="headerlink" title="12. 标记位置"></a>12. 标记位置</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>ma</code></li>
 <li>说明：将当前位置标记为 a，之后可以按 <code>`a</code> 跳到此位置。a 可以为其他字母。</li>
 </ul>
-<h4 id="13-_多行操作">13. 多行操作</h4><ul>
+<h4 id="13-多行操作"><a href="#13-多行操作" class="headerlink" title="13. 多行操作"></a>13. 多行操作</h4><ul>
 <li>模式：visual block（意即使用 <code>&lt;C-v&gt;</code> 选中的）</li>
 <li>按键：<code>I</code></li>
 <li>说明：选中字符区域后，按 <code>I</code> 进入 insert 模式（光标处在选中区域的第一行），输入一些字符，按 <code>esc</code> 返回到 normal 模式，则针对第一行所作的操作将反映到所有选中的行上。这一技巧常用于多行注释（当然也有不少插件的多行注释更好用）。</li>
 </ul>
-<h4 id="14-_redo">14. redo</h4><ul>
+<h4 id="14-redo"><a href="#14-redo" class="headerlink" title="14. redo"></a>14. redo</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>&lt;C-r&gt;</code></li>
 <li>说明：redo，重新应用 <code>u</code> 命令所撤销的操作。</li>
 </ul>
-<h4 id="15-_替换字符">15. 替换字符</h4><ul>
+<h4 id="15-替换字符"><a href="#15-替换字符" class="headerlink" title="15. 替换字符"></a>15. 替换字符</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>r</code></li>
 <li>说明：替换当前字符，比如 <code>ra</code> 可以将当前字符替换为 a。</li>
 <li>引申：<code>cl</code> 可以删除当前字符并进入 insert 模式。</li>
 </ul>
-<h4 id="16-_快速缩进">16. 快速缩进</h4><ul>
+<h4 id="16-快速缩进"><a href="#16-快速缩进" class="headerlink" title="16. 快速缩进"></a>16. 快速缩进</h4><ul>
 <li>模式：visual</li>
 <li>按键：<code>&gt;</code> / <code>&lt;</code></li>
 <li>说明：向右/左缩进。</li>
 <li>引申：mormal 模式可以 <code>&gt;&gt;</code> / <code>&lt;&lt;</code> 来分别向右/左缩进<strong>当前行</strong>。</li>
 </ul>
-<h4 id="17-_分割窗口">17. 分割窗口</h4><ul>
+<h4 id="17-分割窗口"><a href="#17-分割窗口" class="headerlink" title="17. 分割窗口"></a>17. 分割窗口</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>:sp</code></li>
 <li>说明：将当前窗口分割为两个，当然每个窗口的 buffer 还是同一个文件。</li>
 </ul>
-<h4 id="18-_括号跳转">18. 括号跳转</h4><ul>
+<h4 id="18-括号跳转"><a href="#18-括号跳转" class="headerlink" title="18. 括号跳转"></a>18. 括号跳转</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>%</code></li>
 <li>说明：当光标处字符为 <code>()[]{}</code> 中任意一个时，按下 <code>%</code> 可以跳到括号的另一半处。</li>
 </ul>
-<h4 id="19-_sudo_保存">19. sudo 保存</h4><ul>
+<h4 id="19-sudo-保存"><a href="#19-sudo-保存" class="headerlink" title="19. sudo 保存"></a>19. sudo 保存</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>:w !sudo tee %</code></li>
 <li>说明：不小心打开了一个需要 sudo 的文件，而且做了不少更改？这条命令可以挽救。完整解释可参看 <a href="http://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work" target="_blank" rel="external">这里</a>。</li>
 </ul>
-<h4 id="20-_宏">20. 宏</h4><ul>
+<h4 id="20-宏"><a href="#20-宏" class="headerlink" title="20. 宏"></a>20. 宏</h4><ul>
 <li>模式：normal</li>
 <li>按键：<code>q</code></li>
 <li>说明：纪录宏。将多处相似的更改抽象为一个可共用的操作，能够节省大量时间。比如，按下 <code>qa</code> 开始记录，接着进行所需的操作，按下 <code>q</code> 结束。此时再到其他需要更改的区域，按下 <code>@a</code> 把刚才宏记录的操作应用到这一区域。另外，<code>n@a</code> 或 <code>@na</code> 将会把宏 <code>a</code> 重复 n 次，n 可以为任意数字。</li>
@@ -257,7 +240,7 @@ html {background-color: white}</style>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/04/12/20-vim-tips/" data-id="cih6cpj2200001exa2u3ync1h" class="article-share-link">Share</a>
+      <a data-url="http://hackll.com/2015/04/12/20-vim-tips/" data-id="cj6ddrq2h00049oxaifudcsyj" class="article-share-link">Share</a>
       
         <a href="http://hackll.com/2015/04/12/20-vim-tips/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -306,7 +289,7 @@ html {background-color: white}</style>
   <div class="outer">
     <div id="footer-info" class="inner">
       <div><a rel="license" href="//creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license"><img src="//i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="License"></a></div>
-      &copy; 2015 Linghao Li<br>
+      &copy; 2017 Linghao Li<br>
       Powered by <a target="_blank" href="http://hexo.io">Hexo</a>, themed by <a target="_blank" href="https://github.com/llh911001/hexo-theme-lighting">Lighting</a>.
     </div>
   </div>
@@ -332,15 +315,15 @@ html {background-color: white}</style>
 <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/scrollReveal.js/0.1.2/scrollReveal.min.js"></script>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 <script>
   window.scrollReveal = new scrollReveal();
 </script>
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

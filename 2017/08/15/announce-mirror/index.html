@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hackll.com</title>
+  <title>一款简洁高效的 React 框架：Mirror | Hackll.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hackll.com">
-<meta property="og:url" content="http://hackll.com/index.html">
+  <meta name="description" content="Mirror 是一款基于 React、Redux 和 react-router 的前端框架，简洁高效、灵活可靠。 又造了个轮子？我们热爱 React 和 Redux。但是，Redux 中有太多的样板文件，需要很多的重复劳动，这一点令人沮丧；更别提在实际的 React 应用中，还要集成 react-router 的路由功能了。 一个典型的 React/Redux 应用看起来像下面这样： action">
+<meta name="keywords" content="react,redux,react-framework">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一款简洁高效的 React 框架：Mirror">
+<meta property="og:url" content="http://hackll.com/2017/08/15/announce-mirror/index.html">
 <meta property="og:site_name" content="Hackll.com">
+<meta property="og:description" content="Mirror 是一款基于 React、Redux 和 react-router 的前端框架，简洁高效、灵活可靠。 又造了个轮子？我们热爱 React 和 Redux。但是，Redux 中有太多的样板文件，需要很多的重复劳动，这一点令人沮丧；更别提在实际的 React 应用中，还要集成 react-router 的路由功能了。 一个典型的 React/Redux 应用看起来像下面这样： action">
+<meta property="og:updated_time" content="2017-08-15T09:19:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hackll.com">
+<meta name="twitter:title" content="一款简洁高效的 React 框架：Mirror">
+<meta name="twitter:description" content="Mirror 是一款基于 React、Redux 和 react-router 的前端框架，简洁高效、灵活可靠。 又造了个轮子？我们热爱 React 和 Redux。但是，Redux 中有太多的样板文件，需要很多的重复劳动，这一点令人沮丧；更别提在实际的 React 应用中，还要集成 react-router 的路由功能了。 一个典型的 React/Redux 应用看起来像下面这样： action">
 <meta name="twitter:creator" content="@lilh42">
 <link rel="publisher" href="u/0/108755916357635545032">
   
@@ -93,24 +98,22 @@ html {background-color: white}</style>
 </aside>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-announce-mirror" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-announce-mirror" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/15/announce-mirror/">一款简洁高效的 React 框架：Mirror</a>
+    <h1 class="article-title" itemprop="name">
+      一款简洁高效的 React 框架：Mirror
     </h1>
   
 
 
         <div class="article-meta">
           
-  <time datetime="2017-08-14T16:00:00.000Z" itemprop="datePublished">08/15/2017</time>
+  <time class="centered" datetime="2017-08-14T16:00:00.000Z" itemprop="datePublished">08/15/2017</time>
 
 
           
@@ -162,224 +165,27 @@ html {background-color: white}</style>
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/19/debounce-and-throttle/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Next</strong>
+      <div class="article-nav-title">Debounce 和 Throttle 的原理及实现</div>
+    </a>
+  
+</nav>
+
+
+  
 </article>
 
 
-
-  
-    <article id="post-debounce-and-throttle" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/19/debounce-and-throttle/">Debounce 和 Throttle 的原理及实现</a>
-    </h1>
-  
-
-
-        <div class="article-meta">
-          
-  <time datetime="2015-11-18T16:00:00.000Z" itemprop="datePublished">11/19/2015</time>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在处理诸如 <code>resize</code>、<code>scroll</code>、<code>mousemove</code> 和 <code>keydown/keyup/keypress</code> 等事件的时候，通常我们不希望这些事件太过频繁地触发，尤其是监听程序中涉及到大量的计算或者有非常耗费资源的操作。</p>
-<p>有多频繁呢？以 <code>mousemove</code> 为例，根据 <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-mousemove" target="_blank" rel="external">DOM Level 3</a> 的规定，「如果鼠标连续移动，那么浏览器就<strong>应该</strong>触发多个连续的 <code>mousemove</code> 事件」，这意味着浏览器会在其内部计时器允许的情况下，根据用户移动鼠标的速度来触发 <code>mousemove</code> 事件。（当然了，如果移动鼠标的速度足够快，比如“刷”一下扫过去，浏览器是不会触发这个事件的）。<code>resize</code>、<code>scroll</code> 和 <code>key*</code> 等事件与此类似。</p>
-<p>可以参看这个 <a href="http://codepen.io/llh911001/pen/XmGMxg?editors=101" target="_blank" rel="external">Demo</a> 体会下。</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/11/19/debounce-and-throttle/#more">Read more</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/11/19/debounce-and-throttle/" data-id="cj6ddrq1r00009oxai5se5b77" class="article-share-link">Share</a>
-      
-        <a href="http://hackll.com/2015/11/19/debounce-and-throttle/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debounce/">debounce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/throttle/">throttle</a></li></ul>
-
-
-    </footer>
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-  
-</article>
-
-
-
-  
-    <article id="post-decorators-in-es7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/24/decorators-in-es7/">Decorators in ES7</a>
-    </h1>
-  
-
-
-        <div class="article-meta">
-          
-  <time datetime="2015-07-23T16:00:00.000Z" itemprop="datePublished">07/24/2015</time>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>ES6 已经来了，ES7 还会远么？</p>
-</blockquote>
-<p>ES6 标准已于上个月（2015年6月17日）正式发布，众多<a href="https://github.com/lukehoban/es6features" target="_blank" rel="external">新特性</a>成为标准固然另人激动，然而更值得憧憬的还是未来。所以，让我们来看看 ES7（更正式的说法是 ES2016）有哪些激动人心的变化。最为人津津乐道的可能就是 <a href="http://wiki.ecmascript.org/doku.php?id=strawman:async_functions" target="_blank" rel="external">async/await</a> 了，不过我个人非常喜欢 <a href="https://github.com/wycats" target="_blank" rel="external">Yehuda Katz</a> 提出的 <a href="https://github.com/wycats/javascript-decorators" target="_blank" rel="external">decorator</a> 模式，本文尝试对此做一个介绍。</p>
-<h2 id="decorator-是什么"><a href="#decorator-是什么" class="headerlink" title="decorator 是什么"></a>decorator 是什么</h2><p>ES7 的 decorator 概念是从 Python 借来的，在 Python 里，decorator 实际上是一个 wrapper，它作用于一个目标函数，对这个目标函数做一些额外的操作，然后返回一个新的函数：<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/24/decorators-in-es7/#more">Read more</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/07/24/decorators-in-es7/" data-id="cj6ddrq2u000a9oxak7itzi5w" class="article-share-link">Share</a>
-      
-        <a href="http://hackll.com/2015/07/24/decorators-in-es7/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES7/">ES7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/decorator/">decorator</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-read-on-liberty" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/02/read-on-liberty/">《论自由》读书笔记</a>
-    </h1>
-  
-
-
-        <div class="article-meta">
-          
-  <time datetime="2015-06-01T16:00:00.000Z" itemprop="datePublished">06/02/2015</time>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>注：我读的是 <a href="http://www.amazon.cn/gp/product/B00WLZMUFA?psc=1&amp;ref_=oh_aui_d_detailpage_o03_" target="_blank" rel="external">顾肃译本</a>，对我来说，这个译本总体上读起来很通顺，除了极少数长句有些别扭之外，其他都很容易理解。</p>
-</blockquote>
-<p>密尔的这本《论自由》，其实早就应该读的。大学期间在图书馆看到过一本老旧的严复译《群己权界论》，严本所受评价甚高，奈何其文颇为晦涩拗口（其实是我古文水平太低），翻了两页就没勇气继续下去了，后面就一直束之高阁。直到最近，才趁着空闲时间，读完了这本只有不到两百页的「小书」。</p>
-<p>在本书的开篇，作者就声明，本书要讨论的「自由」是「公民自由或社会自由，即社会可以合法地施加于个人的权力之性质和界限」（由此可见严复译本书名之准确贴切）。这个界限是什么呢？作者说，是自我保护，即「<strong>人类可以个别地或集体地对任何成员的行动自由进行干涉，其唯一的正当理由是旨在自我保护</strong>」。在其他任何情况下，只要一个人的行动不会明显而立即地对他人造成伤害，则社会没有权力阻止他的行动。这说的是社会权力之界限。由此我们也可以推导出个人自由的界限，这个界限就是，<strong>个人自由不能妨害他人同样的自由</strong>。<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/06/02/read-on-liberty/#more">Read more</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/06/02/read-on-liberty/" data-id="cj6ddrq2o00059oxaqqt38on3" class="article-share-link">Share</a>
-      
-        <a href="http://hackll.com/2015/06/02/read-on-liberty/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/论自由/">论自由</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-todomvc-with-es6-and-jspm" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/15/todomvc-with-es6-and-jspm/">Todomvc with ES6 and jspm</a>
-    </h1>
-  
-
-
-        <div class="article-meta">
-          
-  <time datetime="2015-05-14T16:00:00.000Z" itemprop="datePublished">05/15/2015</time>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://jspm.io/" target="_blank" rel="external">jspm</a> 是一个包管理器，使用 <a href="https://github.com/systemjs/systemjs" target="_blank" rel="external">SystemJS</a> 这个模块加载器进行模块的管理。SystemJS 是一个所谓 <code>universal module loader</code>，基于 <a href="https://github.com/ModuleLoader/es6-module-loader" target="_blank" rel="external">ES6 module loader</a>，除了能加载 ES6 模块，还支持 CommonJS，AMD 及 globals 语法。</p>
-<h3 id="1-How-jspm-load-modules"><a href="#1-How-jspm-load-modules" class="headerlink" title="1. How jspm load modules"></a>1. How jspm load modules</h3><p>jspm 通过 <a href="https://github.com/jspm/registry" target="_blank" rel="external">registry</a> 加载模块，它其实没有自己的仓库，目前只能加载 <code>npm</code> 和 <code>github</code> 上的模块，当然也可以自己通过它的 <code>registry</code> 机制「注册」一些模块之后使用。</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/05/15/todomvc-with-es6-and-jspm/#more">Read more</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/05/15/todomvc-with-es6-and-jspm/" data-id="cj6ddrq2b00039oxamhlzbbh9" class="article-share-link">Share</a>
-      
-        <a href="http://hackll.com/2015/05/15/todomvc-with-es6-and-jspm/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jspm/">jspm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todomvc/">todomvc</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next</a>
-    </nav>
-  
-
+</section>
 
 </section>
       </div>
@@ -399,11 +205,13 @@ html {background-color: white}</style>
 <script>
   var disqus_shortname = 'linghaosblog';
   
+  //var disqus_url = 'http://hackll.com/2017/08/15/announce-mirror/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//go.disqus.com/count.js';
+    dsq.src = '//go.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
