@@ -103,7 +103,7 @@ html {background-color: white}</style>
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/15/announce-mirror/">一款简洁高效的 React 框架：Mirror</a>
+      <a class="article-title" href="/2017/08/15/announce-mirror/">一种简化 Redux 的思路</a>
     </h1>
   
 
@@ -119,8 +119,7 @@ html {background-color: white}</style>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://github.com/mirrorjs/mirror" target="_blank" rel="external">Mirror</a> 是一款基于 React、Redux 和 react-router 的前端框架，简洁高效、灵活可靠。</p>
-<h2 id="又造了个轮子？"><a href="#又造了个轮子？" class="headerlink" title="又造了个轮子？"></a>又造了个轮子？</h2><p>我们热爱 React 和 Redux。但是，Redux 中有太多的<a href="https://github.com/reactjs/redux/blob/master/docs/recipes/ReducingBoilerplate.md" target="_blank" rel="external">样板文件</a>，需要很多的重复劳动，这一点令人沮丧；更别提在实际的 React 应用中，还要集成 <code>react-router</code> 的路由功能了。</p>
+        <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>我们热爱 React 和 Redux。但是，Redux 中有太多的<a href="https://github.com/reactjs/redux/blob/master/docs/recipes/ReducingBoilerplate.md" target="_blank" rel="external">样板文件</a>，需要很多的重复劳动，这一点令人沮丧；更别提在实际的 React 应用中，还要集成 <code>react-router</code> 的路由功能了。</p>
 <p>一个典型的 React/Redux 应用看起来像下面这样：</p>
 <h4 id="actions-js"><a href="#actions-js" class="headerlink" title="actions.js"></a><code>actions.js</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_TODO = <span class="string">'todos/add'</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> COMPLETE_TODO = <span class="string">'todos/complete'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    type: ADD_TODO,</div><div class="line">    text</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">completeTodo</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    type: COMPLETE_TODO,</div><div class="line">    id</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
