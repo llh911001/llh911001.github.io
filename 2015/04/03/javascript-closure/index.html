@@ -161,7 +161,7 @@ html {background-color: white}</style>
 <p>更确切地讲，是这样的：</p>
 <p><code>fun.Scope = [VE].concat([[Scope]])</code></p>
 <p>还拿上图这个例子来说，在函数 <code>f</code> 创建的时候，<code>global.VE</code> 的值是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">global.VE = &#123;</div><div class="line">	x: <span class="number">10</span>,</div><div class="line">	f: <span class="xml"><span class="tag">&lt;<span class="name">function</span> <span class="attr">refrence</span>&gt;</span></span></div><div class="line"><span class="xml">&#125;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">global.VE = &#123;</div><div class="line">	x: <span class="number">10</span>,</div><div class="line">	f: &lt;function refrence&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>f</code> 的 [[Scope]] 属性是：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f.[[Scope]] = [global.VE]</div></pre></td></tr></table></figure>
 <p>所以，<code>f</code> 执行环境为：</p>
@@ -184,7 +184,7 @@ html {background-color: white}</style>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hackll.com/2015/04/03/javascript-closure/" data-id="cj6ddrq2q00079oxam5urrama" class="article-share-link">Share</a>
+      <a data-url="http://hackll.com/2015/04/03/javascript-closure/" data-id="cjf3nrjyj0008y1xa511s64im" class="article-share-link">Share</a>
       
         <a href="http://hackll.com/2015/04/03/javascript-closure/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -228,7 +228,7 @@ html {background-color: white}</style>
   <div class="outer">
     <div id="footer-info" class="inner">
       <div><a rel="license" href="//creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license"><img src="//i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="License"></a></div>
-      &copy; 2017 Linghao Li<br>
+      &copy; 2018 Linghao Li<br>
       Powered by <a target="_blank" href="http://hexo.io">Hexo</a>, themed by <a target="_blank" href="https://github.com/llh911001/hexo-theme-lighting">Lighting</a>.
     </div>
   </div>
